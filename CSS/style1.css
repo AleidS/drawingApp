@@ -27,6 +27,8 @@ p{
   font-family:tahoma;
   background-color:none;
 }
+
+/* Drawing area */
 #canvas {
   border: 2px solid black;
   position:absolute;
@@ -44,7 +46,7 @@ p{
   z-index:2;
   background-color:rgba(00,70,70,0.6);
 }
-
+/* Buttons */
 #menu1{
   position:relative;
   display:inline-flex;
@@ -52,6 +54,7 @@ p{
   padding-left:7vw;
   padding-right:1vw;
 }
+/* Sliders */
 #menu2{
   height:3px;
   top:-2px;
@@ -76,7 +79,7 @@ p{
   margin-left:5%;
   float:right;
 }
-
+/* Slider styling */
 input[type="range"] {
   appearance:none;
  -webkit-appearance: none;
@@ -282,6 +285,7 @@ input[type="color"]:focus {
   visibility: hidden;
 }
 
+/* List that appears when clicking on magic icon tool */
 #effectswrapper{
   background-color:black;
   z-index:400;
@@ -299,6 +303,8 @@ input[type="color"]:focus {
   overflow-x: hidden;
   font-size:20px;
 }
+
+/* Appears when clicking on i */
 #infowrapper{
   background-color:black;
   z-index:400;
@@ -316,6 +322,7 @@ input[type="color"]:focus {
   overflow-x: hidden;
   font-size:20px;
 }
+
 
 #currenteffect, #showinfo{
   position:relative;

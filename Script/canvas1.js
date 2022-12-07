@@ -412,6 +412,9 @@ window.addEventListener("load" , () => {
   }
 });
 
+
+
+
 //NOT USED THINGS, might be interesting for future projects
 
 //UNDO AND REDO -> Not object oriented.
