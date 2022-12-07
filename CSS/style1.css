@@ -1,0 +1,346 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:tahoma,sans-serif
+}
+
+html, body {
+  overflow-x: hidden;
+  touch-action: none;
+  overflow-y: hidden;
+  height:100%;
+  padding:0px;
+  margin:0px;
+  position: fixed;
+  touch-action: manipulation;
+  background-color:black;
+}
+
+body{
+/*-webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  width:  100%;
+}
+
+p{
+  color:white;
+  font-family:tahoma;
+  background-color:none;
+}
+#canvas {
+  border: 2px solid black;
+  position:absolute;
+  touch-action: manipulation;
+  width:100vw;
+  z-index:0;
+  height:100vh;
+  background-color:none;
+}
+
+#menu{
+  position: absolute;
+  width:100vw;
+  height:50px;
+  z-index:2;
+  background-color:rgba(00,70,70,0.6);
+}
+
+#menu1{
+  position:relative;
+  display:inline-flex;
+  width:100vw;
+  height750px;
+  padding-left:7vw;
+  padding-right:1vw;
+}
+#menu2{
+  height:3px;
+  top:-2px;
+  background-color:white;
+  width:100vw;
+  position:relative;
+  display:flex;
+}
+
+#brush_size_slider{
+  position:inline-block;
+  background-color:none;
+  transform: rotate(00deg);
+  margin-right:5%;
+  width:68%;
+  color:white;
+}
+
+#transparencyslider{
+  position:inline-block;
+  width:30%;
+  margin-left:5%;
+  float:right;
+}
+
+input[type="range"] {
+ -webkit-appearance: none;
+background-color: rgba(0,0,0,0);
+}
+
+input[type="range"]:focus {
+ outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+ background: white;
+ opacity:0.8;
+ height: 3px;
+ border-radius: 40px;
+}
+
+input[type="range"]::-moz-range-track {
+ background: white;
+ opacity:0.8;
+ height: 3px;
+ border-radius: 40px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  /* Don't specify size and BG color here! is done in js file for dynamic styling */
+ -webkit-appearance: none;
+ height: 15px;
+ width: 15px;
+ margin-top: -5px;
+ border-radius: 50%;
+ box-shadow: 0px 0px 4px 2px rgba(255,255,255,0.5);
+}
+
+
+input[type="range"]::-moz-range-thumb {
+  /* Don't specify size and BG color here! is done in js file for dynamic styling */
+ -webkit-appearance: none;
+ height: 15px;
+ width: 15px;
+ margin-top: -5px;
+ border-radius: 50%;
+ box-shadow: 0px 0px 4px 2px rgba(255,255,255,0.5);
+}
+
+#transparencyslider::-webkit-slider-runnable-track {
+  background: white;
+  height:3px;
+}
+
+#transparencyslider::-moz-range-track {
+  background: none;
+  height:0px;
+}
+
+#transparencyslider::-webkit-slider-thumb {
+  height:17px;
+  width:17px;
+  background: repeating-linear-gradient(
+   -45deg,
+   #FFFFFFFF 1px,
+   #000000FF 4px,
+   #FFFFFFFF 4px,
+   #000000FF 4px
+  );
+}
+
+#transparencyslider::-moz-range-thumb {
+ height:17px;
+ width:17px;
+ background: repeating-linear-gradient(
+  -45deg,
+  #FFFFFFFF 1px,
+  #000000FF 4px,
+  #FFFFFFFF 4px,
+  #000000FF 4px
+ );
+}
+
+.menubutton, .menubuttonwrap {
+ position: relative;
+ cursor: pointer;
+ margin-top: 10px;
+ margin-bottom:10px;
+ /* Sizes with screen width and flex property: */
+ width:100%;
+ display:flex;
+}
+
+.menubuttonwrap {
+  display:block;
+}
+
+
+#downloadbutton{
+  margin-top:-8px;
+  margin-left:-6px;
+  padding: 5px;
+  color:white;
+  font-family:tahoma;
+  font-weight:100;
+}
+/* Icon sizes */
+.menubutton label i, .menubuttonwrap label i, #downloadbutton i{
+  font-size: 25px;
+  opacity:0.7;
+}
+
+.menubutton label, .menubuttonwrap label, #downloadbutton{
+  color:white;
+  font-family:tahoma;
+  font-weight:100;
+}
+
+#brush_color_pick_button label{
+  text-shadow: 0 0 1px white; //So colorpick is visible in all conditions
+  height:35px;
+  padding-left:3px;
+  margin-top:-5px;
+  padding-top:5px;
+  //border:0.01px solid rgba(0,0,0,0.1);
+  border-radius:20px;
+  /* do not select text when mouse is dragged over */
+  -webkit-user-select: none; /* Safari */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+#background_color_pick_button label{
+  /* text-shadow: 0 0 1px white; */
+  height:35px;
+  margin-top:-5px;
+  padding-top:5px;
+  background-color: rgba(50,100,100,0.5);
+  border-radius:20px;
+  /*border:0.01px solid rgba(255,255,255,0.1);*/
+  /* do not select text when mouse is dragged over */
+  -webkit-user-select: none; /* Safari */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+input[type="text"] {
+  -webkit-appearance: none;
+  display:none;
+  border: 1px solid white;
+  width: 32px;
+  height: 30px;
+  /* clip-path: circle(30%); */
+  border: 1px solid white;
+  border-radius:20px;
+}
+
+input[type="color"] {
+  border: 1px solid white;
+  width: 32px;
+  height: 30px;
+  /* clip-path: circle(30%); */
+  border: 1px solid white;
+  border-radius:20px;
+}
+
+input[type="color"] {
+  border: 1px solid white;
+  width: 30px;
+  height: 30px;
+  border-width: 1px;
+  border-style:solid;
+  border-color:white;
+  border-radius:20px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius:20px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: 1px solid white;
+  border-radius:20px;
+}
+
+input[type="color"]:focus {
+ outline: none;
+}
+
+/*Colorpicks need to be visible otherwise wont work on IOS mobile*/
+.menubutton input{
+  position: absolute;
+  bottom: 0;
+  opacity:0.001;
+}
+
+.menubutton input{
+  position: absolute;
+  bottom: 0;
+}
+
+.menubutton input[type="button"] {
+  visibility: hidden;
+}
+
+#effectswrapper{
+  background-color:black;
+  z-index:400;
+  font-size:10px;
+  display:none;
+  height:clamp(150px,600%,500px);
+  width:clamp(220px,40vw,300px);
+  left:-30px;
+  padding-top:20px;
+  padding-right:10px;
+  padding-left:15px;
+  position:absolute;
+  background-color:none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size:20px;
+}
+#infowrapper{
+  background-color:black;
+  z-index:400;
+  font-size:10px;
+  display:none;
+  height:clamp(150px,600%,500px);
+  width:clamp(220px,40vw,300px);
+  right:0;
+  padding-top:20px;
+  padding-right:10px;
+  padding-left:15px;
+  position:absolute;
+  background-color:none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size:20px;
+}
+
+#currenteffect, #showinfo{
+  position:relative;
+  border:none;
+  background:none;
+  color:white;
+  display:inline-block;
+}
+.effectsbutton, .effects{
+  font-size: clamp(20pt, 5vw, 24pt);
+  background:none;
+  border:0px;
+  color:white;
+  display:block;
+}
+.effectsbutton:hover{
+    background-color: rgba(0,120,100,1);
+}
+/* Scrollbar for effects */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius:20px;
+    width:20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0,80,60,1);
+}
