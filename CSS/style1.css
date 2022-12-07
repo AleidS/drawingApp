@@ -49,7 +49,6 @@ p{
   position:relative;
   display:inline-flex;
   width:100vw;
-  height750px;
   padding-left:7vw;
   padding-right:1vw;
 }
@@ -79,6 +78,7 @@ p{
 }
 
 input[type="range"] {
+  appearance:none;
  -webkit-appearance: none;
 background-color: rgba(0,0,0,0);
 }
@@ -104,6 +104,7 @@ input[type="range"]::-moz-range-track {
 input[type="range"]::-webkit-slider-thumb {
   /* Don't specify size and BG color here! is done in js file for dynamic styling */
  -webkit-appearance: none;
+ appearance:none;
  height: 15px;
  width: 15px;
  margin-top: -5px;
@@ -115,6 +116,7 @@ input[type="range"]::-webkit-slider-thumb {
 input[type="range"]::-moz-range-thumb {
   /* Don't specify size and BG color here! is done in js file for dynamic styling */
  -webkit-appearance: none;
+ appearance:none;
  height: 15px;
  width: 15px;
  margin-top: -5px;
@@ -192,12 +194,12 @@ input[type="range"]::-moz-range-thumb {
 }
 
 #brush_color_pick_button label{
-  text-shadow: 0 0 1px white; //So colorpick is visible in all conditions
+  text-shadow: 0 0 1px white; /*So colorpick is visible in all conditions*/
   height:35px;
   padding-left:3px;
   margin-top:-5px;
   padding-top:5px;
-  //border:0.01px solid rgba(0,0,0,0.1);
+  /* //border:0.01px solid rgba(0,0,0,0.1); */
   border-radius:20px;
   /* do not select text when mouse is dragged over */
   -webkit-user-select: none; /* Safari */
@@ -221,6 +223,7 @@ input[type="range"]::-moz-range-thumb {
 
 input[type="text"] {
   -webkit-appearance: none;
+  appearance:none;
   display:none;
   border: 1px solid white;
   width: 32px;
